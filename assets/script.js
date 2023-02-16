@@ -1,22 +1,23 @@
 const slides = [
 	{
-		"image":"./assets/images/slideshow/slide1.jpg",
+		"image":"slide1.jpg",
 		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image":"./assets/images/slideshow/slide2.jpg",
+		"image":"slide2.jpg",
 		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image":"./assets/images/slideshow/slide3.jpg",
+		"image":"slide3.jpg",
 		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image":"./assets/images/slideshow/slide4.png",
+		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
+const myPath = './assets/images/slideshow/'
 const leftArrow = document.querySelector('.arrow_left');
 const rightArrow = document.querySelector('.arrow_right');
 const bannerImg = document.querySelector('.banner-img');
@@ -46,7 +47,7 @@ leftArrow.addEventListener('click', function() {
   dots[currentSlide].classList.add('dot_selected');
 
   function updateSlide() {
-	bannerImg.src = slides[currentSlide].image;
+	bannerImg.src = myPath+slides[currentSlide].image;
 	tagLine.innerHTML = slides[currentSlide].tagLine;
   
 	for (let i = 0; i < dots.length; i++) {
